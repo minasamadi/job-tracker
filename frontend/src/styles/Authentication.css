@@ -1,0 +1,23 @@
+.site-title{
+    font-family: poppins;
+    font-size: 58px;
+    color: midnightblue;
+}
+
+.site-motto{
+    font-family: poppins-regular;
+    font-size: 15px;
+    color: cadetblue;
+}
+
+.form-title{
+    font-family: poppins;
+    font-size: large;
+    color: teal;
+}
+
+.auth-btn{
+    width: 150px;
+    background-color: midnightblue;
+    color: white;
+}
