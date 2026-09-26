@@ -1,11 +1,47 @@
 @font-face{
-    font-family: Poppins;
+    font-family: Poppins-bold;
     src: url('../assets/fonts/poppins-bold-webfont.woff2') format('woff2');
     font-weight: bolder;
 }
 
 @font-face{
-    font-family: Poppins-regular;
-    src: url('../assets/fonts/poppins-regular-webfont.woff2') format('truetype');
+    font-family: Poppins;
+    src: url('../assets/fonts/poppins-regular-webfont.woff2') format('woff2');
     font-weight: normal;
+}
+
+@font-face{
+    font-family: Inter;
+    src: url('../assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: Inter-bold;
+    src: url('../assets/fonts/Inter-Bold.woff2') format('woff2');
+    font-weight: bold;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F7F8FC;
+    font-family: Inter, sans-serif;
+    font-size: medium;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
 }
