@@ -18,7 +18,7 @@
 
 .auth-btn {
     width: 150px;
-    background-color: #304A6E;
+    background-color:  #B85F6A;
     color: white;
 }
 
@@ -29,8 +29,8 @@
 }
 
 .register-card {
-    background-color: #F8F5F0;
-    border: 3px solid #DED3C3;
+    background-color: #F6F4FA;
+    border: 3px solid #DAD3E8;
     border-radius: 5px;
 }
 
@@ -39,7 +39,7 @@
     width: 100%;
     overflow-x: hidden;
     text-align: center;
-    background-color: #e3e9f5;
+    background-color:  #F0EEF2;
 }
 
 .auth-content{

@@ -1,0 +1,59 @@
+.dashboard-wrapper{
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+.dashboard-card{
+    color: #304A6E;
+    height: 170px;
+    font-size: large;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover{
+    transform: scale(1.05);
+}
+
+.dashboard-card-icon{
+    font-size: 50px;
+}
+
+.new-app-card{
+background-color: #DCE7FA;
+}
+
+.new-app-card .dashboard-card-icon{
+    color: #2C5CA8;
+}
+
+
+.my-app-card{
+background-color: #FBF3E3;
+}
+
+.my-app-card .dashboard-card-icon{
+    color: #B85F6A;
+}
+
+.report-card{
+background-color: #E9F5EE;
+}
+
+.report-card .dashboard-card-icon{
+    color: #1F7A4D;
+}
+
+.external-links-label{
+    font-family: poppins;
+    font-size: 20px;
+    color: #304A6E;
+}
+
+.external-links-strip{
+    background-color: #E1E7F5;
+    height: 50px;
+    width: 100%;
+}
