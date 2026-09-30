@@ -1,0 +1,42 @@
+.applications-content{
+    max-width: 900px;   
+    margin: 0 auto;  
+    padding-top: 100px;  
+}
+
+.search-bar-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.sortable-header {
+    cursor: pointer;
+}
+
+.sortable-header i {
+    color: white;
+}
+
+.table {
+    --bs-table-striped-bg: #d9dade;
+}
+
+.table thead th{
+    background-color: #304A6E;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+}
+
+th{
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.applications-list{
+    border: 2px solid #A8B3D6;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(48, 74, 110, 0.05);
+}
