@@ -2,13 +2,14 @@ import PageLayout from "../components/PageLayout";
 import '../styles/Dashboard.css';
 import { BsLinkedin } from "react-icons/bs";
 import { SiGlassdoor, SiIndeed } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 
 
 const dashboardCards = [
-    { title: "New Application", icon: "bi-file-earmark-plus", cardClass: "new-app-card" },
-    { title: "My Applications", icon: "bi-search", cardClass: "my-app-card" },
-    { title: "Report", icon: "bi-bar-chart", cardClass: "report-card" }
+    { title: "New Application", icon: "bi-file-earmark-plus", cardClass: "new-app-card", linkTo: "/new-application" },
+    { title: "My Applications", icon: "bi-search", cardClass: "my-app-card", linkTo: "/applications" },
+    { title: "Report", icon: "bi-bar-chart", cardClass: "report-card", linkTo: "/report" },
 ];
 
 export default function Dashboard() {
@@ -28,15 +29,15 @@ export default function Dashboard() {
                     </a>
                 </div>
                 <main className="row justify-content-center mt-5 g-5">
-                    {dashboardCards.map(({ title, icon, cardClass }) => (
-                        <div className="col-12 col-md-3 " key={title}>
-                            <div className={`card dashboard-card shadow ${cardClass}`} >
-                                <div className="card-body d-flex flex-column align-items-center">
-                                    <i className={`bi ${icon} dashboard-card-icon mt-3`}></i>
-                                    <div className="dashboard-card-title mt-3">{title}</div>
-                                </div>
-                            </div>
-                        </div>
+                    {dashboardCards.map(({ title, icon, cardClass, linkTo }) => (
+                            <Link className="col-12 col-md-3 text-decoration-none" to = {linkTo} key={title}>
+                                    <div className={`card dashboard-card shadow ${cardClass}`} >
+                                        <div className="card-body d-flex flex-column align-items-center">
+                                            <i className={`bi ${icon} dashboard-card-icon mt-3`}></i>
+                                            <div className="dashboard-card-title mt-3">{title}</div>
+                                        </div>
+                                    </div>
+                            </Link>
                     ))}
                 </main>
             </div>
