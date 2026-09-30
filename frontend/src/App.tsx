@@ -1,13 +1,12 @@
 
 import './App.css'
-import Applications from './pages/Applications'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-
-      <Applications/>
+      <Dashboard />
       /* <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />

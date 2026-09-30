@@ -8,7 +8,7 @@ export default function Applications() {
         <PageLayout>
             <div className="applications-content">
                 <div className="search-bar-container">
-                    <InputGroup className='mt-5'>
+                    <InputGroup>
                         <input type="search" className="form-control" placeholder="Search applications..." />
                         <button className="btn search-btn" type="button">
                             <i className="bi bi-search"></i>

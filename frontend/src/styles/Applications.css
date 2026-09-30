@@ -1,13 +1,13 @@
 .applications-content{
     max-width: 900px;   
     margin: 0 auto;  
-    padding-top: 100px;  
+    padding-top: 140px;  
 }
 
 .search-bar-container {
     max-width: 500px;
     width: 100%;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
 .sortable-header {

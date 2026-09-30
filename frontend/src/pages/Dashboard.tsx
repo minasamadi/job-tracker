@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import PageLayout from "../components/PageLayout";
 import '../styles/Dashboard.css';
 import { BsLinkedin } from "react-icons/bs";
 import { SiGlassdoor, SiIndeed } from "react-icons/si";
@@ -11,14 +11,9 @@ const dashboardCards = [
     { title: "Report", icon: "bi-bar-chart", cardClass: "report-card" }
 ];
 
-
-
 export default function Dashboard() {
     return (
-        <div className="page-wrapper">
-            <div className="fixed-top">
-                <Header />
-            </div>
+        <PageLayout>
             <div className="dashboard-content">
                 <div className="external-links-strip d-flex justify-content-start mt-0 pt-2 gap-4 ps-5">
                     <span className="external-links-label">Explore jobs on:</span>
@@ -45,6 +40,6 @@ export default function Dashboard() {
                     ))}
                 </main>
             </div>
-        </div>
+        </PageLayout>
     );
 }
