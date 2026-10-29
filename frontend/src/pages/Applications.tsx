@@ -1,11 +1,12 @@
 import { InputGroup } from 'react-bootstrap';
 import PageLayout from '../components/PageLayout';
 import '../styles/Applications.css';
+import data from '../data/mock-data.json'
 
-{/* TODO: Add pagination when applications are generated dynamically */}
+{/* TODO: Add pagination when applications are generated dynamically */ }
 export default function Applications() {
     return (
-        <PageLayout>
+        <PageLayout pageTitle="My applications">
             <div className="applications-content">
                 <div className="search-bar-container">
                     <InputGroup>
@@ -34,67 +35,16 @@ export default function Applications() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    {/* TODO: Generate application rows dynamically with map() */}
-                                    <input type="checkbox" className="form-check-input me-2" />
-                                </td>
-                                <td>Company A</td>
-                                <td>Software Engineer</td>
-                                <td>2024-06-01</td>
-                                <td>Applied</td>
-                                <td><i className='bi bi-trash'></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" className="form-check-input me-2" />
-                                </td>
-                                <td>Company B</td>
-                                <td>Data Analyst</td>
-                                <td>2024-05-28</td>
-                                <td>Interview</td>
-                                <td><i className='bi bi-trash'></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" className="form-check-input me-2" />
-                                </td>
-                                <td>Company C</td>
-                                <td>Product Manager</td>
-                                <td>2024-05-15</td>
-                                <td>Offer</td>
-                                <td><i className='bi bi-trash'></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" className="form-check-input me-2" />
-                                </td>
-                                <td>Company A</td>
-                                <td>Software Engineer</td>
-                                <td>2024-06-01</td>
-                                <td>Applied</td>
-                                <td><i className='bi bi-trash'></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" className="form-check-input me-2" />
-                                </td>
-                                <td>Company B</td>
-                                <td>Data Analyst</td>
-                                <td>2024-05-28</td>
-                                <td>Interview</td>
-                                <td><i className='bi bi-trash'></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" className="form-check-input me-2" />
-                                </td>
-                                <td>Company C</td>
-                                <td>Product Manager</td>
-                                <td>2024-05-15</td>
-                                <td>Offer</td>
-                                <td><i className='bi bi-trash'></i></td>
-                            </tr>
+                            {data.map((app) => (
+                                <tr key={app.id}>
+                                    <td><input type="checkbox" className="form-check-input me-2" /></td>
+                                    <td>{app.company}</td>
+                                    <td>{app.position}</td>
+                                    <td>{app.dateApplied}</td>
+                                    <td>{app.status}</td>
+                                    <td><i className='bi bi-trash'></i></td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>

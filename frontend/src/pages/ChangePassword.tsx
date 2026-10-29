@@ -3,7 +3,7 @@ import '../styles/ChangePassword.css'
 
 export default function ChangePassword() {
     return (
-        <PageLayout>
+        <PageLayout pageTitle="Change Password">
             <div className="change-password-content ">
                 <div className="card h-100 password-card">
                     <div className="card-body">

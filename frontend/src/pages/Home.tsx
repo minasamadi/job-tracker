@@ -1,5 +1,5 @@
 import PageLayout from "../components/PageLayout";
-import '../styles/Dashboard.css';
+import '../styles/Home.css';
 import { BsLinkedin } from "react-icons/bs";
 import { SiGlassdoor, SiIndeed } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ const dashboardCards = [
 
 export default function Dashboard() {
     return (
-        <PageLayout>
+        <PageLayout pageTitle="Home">
             <div className="dashboard-content">
                 <div className="external-links-strip d-flex justify-content-start mt-0 pt-2 gap-4 ps-5">
                     <span className="external-links-label">Explore jobs on:</span>

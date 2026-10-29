@@ -3,7 +3,7 @@ import '../styles/NewApplication.css';
 
 export default function NewApplication() {
     return (
-        <PageLayout>
+        <PageLayout pageTitle="New Application">
             <div className='new-application-content'>
                 <form>
                     <fieldset className='form-section'>
