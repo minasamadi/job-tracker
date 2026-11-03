@@ -16,16 +16,16 @@ public class ApplicationsController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-        var data = _applicationService.GetAllApplications();
+        var data = await _applicationService.GetAllApplications();
         return Ok(data);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById(int id)
+    public async Task<IActionResult> GetById(int id)
     {
-        var application = _applicationService.GetApplicationById(id);
+        var application = await _applicationService.GetApplicationById(id);
         if (application == null)
         {
             return NotFound();
@@ -35,28 +35,28 @@ public class ApplicationsController : ControllerBase
     }
 
     [HttpGet("search")]
-    public IActionResult Search(string? companyName, string? jobTitle, string? status)
+    public async Task<IActionResult> Search(string? companyName, string? jobTitle, string? status)
     {
-        var results = _applicationService.SearchApplications(companyName, jobTitle, status);
+        var results = await _applicationService.SearchApplications(companyName, jobTitle, status);
         return Ok(results);
     }
 
     [HttpPost]
-    public IActionResult Add(CreateApplicationDto application)
+    public async Task<IActionResult> Add(CreateApplicationDto application)
     {
-        var newApplication = _applicationService.AddApplication(application);
+        var newApplication = await _applicationService.AddApplication(application);
         return CreatedAtAction(nameof(GetById), new { id = newApplication.Id }, newApplication);
     }
 
     [HttpPut("{id}")]
-    public IActionResult Update(int id, CreateApplicationDto application)
+    public async Task<IActionResult> Update(int id, CreateApplicationDto application)
     {
         if (application == null)
         {
             return BadRequest("No DATA!");   // 400
         }
 
-        var updatedApplication = _applicationService.UpdateApplication(id, application);
+        var updatedApplication = await _applicationService.UpdateApplication(id, application);
         if (updatedApplication == null)
         {
             return NotFound();                           // 404
@@ -65,9 +65,9 @@ public class ApplicationsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id)
     {
-        var isDeleted = _applicationService.DeleteApplication(id);
+        var isDeleted = await _applicationService.DeleteApplication(id);
         if (!isDeleted)
         {
             return NotFound();

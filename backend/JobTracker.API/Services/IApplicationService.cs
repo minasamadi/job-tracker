@@ -4,11 +4,11 @@ namespace JobTracker.API.Services;
 
 public interface IApplicationService
 {
-    List<ApplicationDto> GetAllApplications();
-    ApplicationDto? GetApplicationById(int id);
-    ApplicationDto AddApplication(CreateApplicationDto application);
-    ApplicationDto? UpdateApplication(int id, CreateApplicationDto application);
-    bool DeleteApplication(int id);
-    List<ApplicationDto> SearchApplications(string? companyName, string? jobTitle, string? status);
+    Task<List<ApplicationDto>> GetAllApplications();
+    Task<ApplicationDto?> GetApplicationById(int id);
+    Task<ApplicationDto> AddApplication(CreateApplicationDto application);
+    Task<ApplicationDto?> UpdateApplication(int id, CreateApplicationDto application);
+    Task<bool> DeleteApplication(int id);
+    Task<List<ApplicationDto>> SearchApplications(string? companyName, string? jobTitle, string? status);
 
 }
