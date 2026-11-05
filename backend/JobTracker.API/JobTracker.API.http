@@ -1,6 +1,45 @@
-@JobTracker.API_HostAddress = http://localhost:5090
+@HostAddress = http://localhost:5090
 
-GET {{JobTracker.API_HostAddress}}/weatherforecast/
+### Get all applications
+GET {{HostAddress}}/api/applications
 Accept: application/json
 
-###
+### Get one application
+GET {{HostAddress}}/api/applications/1
+Accept: application/json
+
+### Search
+GET {{HostAddress}}/api/applications/search?companyName=Tech&status=Applied
+Accept: application/json
+
+### Create
+POST {{HostAddress}}/api/applications
+Content-Type: application/json
+
+{
+  "jobSource": "LinkedIn",
+  "applyDate": "2026-11-05T00:00:00",
+  "companyName": "Example Co",
+  "jobTitle": "Junior .NET Developer",
+  "jobLink": "https://example.com/jobs/1",
+  "country": "Italy",
+  "city": "Turin",
+  "workMode": "hybrid",
+  "employmentType": "full-time",
+  "jobStatus": "Applied"
+}
+
+### Update
+PUT {{HostAddress}}/api/applications/1
+Content-Type: application/json
+
+{
+  "jobSource": "LinkedIn",
+  "applyDate": "2026-11-05T00:00:00",
+  "companyName": "Example Co",
+  "jobTitle": "Junior .NET Developer",
+  "jobStatus": "Interview"
+}
+
+### Delete
+DELETE {{HostAddress}}/api/applications/1
