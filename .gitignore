@@ -145,7 +145,13 @@ vite.config.ts.timestamp-*
 # Local SQL Server database files
 database/
 
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
 
-# Local SQL Server Database Files
+# SQL Server local database files
 *.mdf
 *.ldf
