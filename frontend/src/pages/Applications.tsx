@@ -1,10 +1,21 @@
 import { InputGroup } from 'react-bootstrap';
 import PageLayout from '../components/PageLayout';
 import '../styles/Applications.css';
-import data from '../data/mock-data.json'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getApplications, type Application } from '../api/applications';
 
 {/* TODO: Add pagination when applications are generated dynamically */ }
 export default function Applications() {
+    const [applications, setApplications] = useState<Application[]>([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        getApplications()
+            .then(data => setApplications(data))
+            .catch(error => console.error(error));
+    }, []);
+
     return (
         <PageLayout pageTitle="My applications">
             <div className="applications-content">
@@ -35,14 +46,22 @@ export default function Applications() {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((app) => (
-                                <tr key={app.id}>
-                                    <td><input type="checkbox" className="form-check-input me-2" /></td>
-                                    <td>{app.company}</td>
-                                    <td>{app.position}</td>
-                                    <td>{app.dateApplied}</td>
-                                    <td>{app.status}</td>
-                                    <td><i className='bi bi-trash'></i></td>
+                            {applications.map((app) => (
+                                <tr
+                                    key={app.id}
+                                    onClick={() => navigate(`/applications/${app.id}`)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <td onClick={(e) => e.stopPropagation()}>
+                                        <input type="checkbox" className="form-check-input me-2" />
+                                    </td>
+                                    <td>{app.companyName}</td>
+                                    <td>{app.jobTitle}</td>
+                                    <td>{app.applyDate}</td>
+                                    <td>{app.jobStatus}</td>
+                                    <td onClick={(e) => e.stopPropagation()}>
+                                        <i className='bi bi-trash'></i>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

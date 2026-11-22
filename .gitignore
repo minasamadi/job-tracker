@@ -155,3 +155,5 @@ obj/
 # SQL Server local database files
 *.mdf
 *.ldf
+
+.env

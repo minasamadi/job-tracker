@@ -41,7 +41,7 @@ public class ApplicationService : IApplicationService
     }
 
 
-    public async Task<ApplicationDto?> UpdateApplication(int id, CreateApplicationDto updatedApplication)
+    public async Task<ApplicationDto?> UpdateApplication(int id, UpdateApplicationDto updatedApplication)
     {
         var application = await _context.Applications.FindAsync(id);
         if (application == null)

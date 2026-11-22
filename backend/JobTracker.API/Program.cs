@@ -14,10 +14,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
 builder.Services.AddScoped<IApplicationService, ApplicationService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationProfile));
@@ -40,20 +36,36 @@ string finalConnectionString = $"{rawConnectionString};AttachDbFilename={mdfFile
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(finalConnectionString));
 
+
+builder.Services.AddCors(options =>
+{
+options.AddPolicy("AllowVite", policy =>
+{
+    policy.WithOrigins("http://localhost:5173")
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+});
+});
+
+builder.Services.AddProblemDetails();
+
 var app = builder.Build();
 
-
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseExceptionHandler();
 
 
-// Configure the HTTP request pipeline.
+// فعال‌سازی Swagger فقط در محیط Development برای حفظ امنیت
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
+
+
 app.UseHttpsRedirection();
+
+app.UseCors("AllowVite");
 
 app.UseAuthorization();
 

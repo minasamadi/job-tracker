@@ -5,7 +5,7 @@ using JobTracker.API.DTOs;
 namespace JobTracker.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("job/[controller]")]
 public class ApplicationsController : ControllerBase
 {
     private readonly IApplicationService _applicationService;
@@ -49,7 +49,7 @@ public class ApplicationsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, CreateApplicationDto application)
+    public async Task<IActionResult> Update(int id, UpdateApplicationDto application)
     {
         if (application == null)
         {
